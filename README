@@ -1,0 +1,129 @@
+# DataPilot AI – Chat with Your Data
+
+DataPilot AI is an AI-powered conversational data analytics application built using Python, Streamlit, Pandas, and the Groq API.
+
+It allows users to upload CSV datasets, ask questions in natural language, and generate analytical results using AI-generated Pandas code.
+
+## Features
+
+- **CSV Upload:** Upload and analyze CSV datasets.
+- **Dataset Preview:** View the first few records of an uploaded dataset.
+- **Dataset Overview:** Display total rows and columns.
+- **Data Quality Report:** Identify missing values, duplicate rows, column data types, and missing-value percentages.
+- **Natural Language Data Analysis:** Ask questions about datasets using everyday language.
+- **AI-Generated Pandas Code:** Generate Pandas code using the Groq API.
+- **Analysis Results:** Execute supported analytical operations and display the results.
+- **Basic Result Validation:** Check for empty results, missing values, and infinite numerical values.
+- **Data Visualization:** Generate bar charts from suitable analytical results.
+
+## Tech Stack
+
+- Python
+- Streamlit
+- Pandas
+- NumPy
+- Groq API
+- Python-dotenv
+
+## How It Works
+
+1. Upload a CSV dataset.
+2. DataPilot AI displays a dataset preview and basic dataset information.
+3. The application performs basic data quality checks.
+4. Enter a question about the uploaded dataset.
+5. The Groq API generates Pandas code based on the question and dataset information.
+6. The application validates the generated code using predefined restrictions and executes it.
+7. Analytical results and suitable visualizations are displayed.
+
+## Project Structure
+
+```text
+DataPilot-AI/
+│
+├── app.py
+├── core.py
+├── requirements.txt
+├── README.md
+├── .env.example
+├── .gitignore
+│
+├── sample_data/
+│
+└── screenshots/
+```
+
+## Installation and Setup
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/YOUR-USERNAME/DataPilot-AI.git
+```
+
+### 2. Navigate to the project directory
+
+```bash
+cd DataPilot-AI
+```
+
+### 3. Create a virtual environment
+
+```bash
+python -m venv .venv
+```
+
+### 4. Activate the environment
+
+Windows PowerShell:
+
+```powershell
+.venv\Scripts\Activate.ps1
+```
+
+### 5. Install dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+### 6. Configure the Groq API key
+
+Create a `.env` file in the project directory:
+
+```env
+GROQ_API_KEY=your_groq_api_key
+```
+
+Replace the placeholder with your own Groq API key.
+
+### 7. Run the application
+
+```bash
+streamlit run app.py
+```
+
+The application will open in your browser.
+
+## AI and Result Validation
+
+DataPilot AI uses an LLM to interpret natural-language questions and generate Pandas code.
+
+Generated code is checked against predefined restrictions before execution. The application also performs basic output checks for empty results, missing values, and infinite numerical values.
+
+These checks help identify some output issues but do not guarantee the mathematical correctness of AI-generated answers. Results should be reviewed before being used for important decisions.
+
+**Security note:** The current application executes generated Python code using `exec()`. Its validation restrictions are not a complete security sandbox. It is intended as a learning and demonstration prototype, not as a secure public multi-user execution environment.
+
+## Future Improvements
+
+- Stronger analytical answer verification.
+- Expanded data visualization options.
+- Support for additional file formats.
+- Improved data cleaning recommendations.
+- More robust and secure execution of analytical operations.
+
+## Author
+
+Sanika Tambe
+
+GitHub: https://github.com/YOUR-USERNAME
